@@ -12,11 +12,8 @@ protocol SortControllerProtocol {
     func displayEmpty()
 }
 
-class SortController {
-    var controller: SortControllerProtocol
-    init(controller: SortControllerProtocol) {
-        self.controller = controller
-    }
+class SortController: NSObject {
+    var controller: SortControllerProtocol!
 
     func sort(_ input: String) {
         if input.isEmpty {
