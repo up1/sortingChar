@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-
+    @IBOutlet var sortController: SortController!
 
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var inputField: UITextField!
@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func sort(_ sender: UIButton) {
-        let sortController = SortController(controller: self)
+//        let sortController = SortController(controller: self)
         sortController.sort(self.inputField.text!)
     }
 
