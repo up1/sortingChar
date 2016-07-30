@@ -16,24 +16,27 @@ class SortControllerTests: XCTestCase {
     }
 
     func testDisplayResultShouldHaveBeenCalledWhenSorted() {
-        let somkiatViewController = SomkiatViewController()
-        let ctrl = SortController(controller: somkiatViewController)
-        ctrl.sort("cat")
-        XCTAssertTrue(somkiatViewController.spyCall)
+        let stubProtocol = SomkiatViewController()
+        let controller = SortController()
+        controller.sortProtocol = stubProtocol
+        controller.sort("cat")
+        XCTAssertTrue(stubProtocol.spyCall)
     }
 
     func testDisplayResultShouldNotHaveBeenCalledWhenTextIsEmpty() {
-        let somkiatViewController = SomkiatViewController()
-        let ctrl = SortController(controller: somkiatViewController)
-        ctrl.sort("")
-        XCTAssertFalse(somkiatViewController.spyCall)
+        let stubProtocol = SomkiatViewController()
+        let controller = SortController()
+        controller.sortProtocol = stubProtocol
+        controller.sort("")
+        XCTAssertFalse(stubProtocol.spyCall)
     }
 
     func testDisplayEmptyWhenInputEmpty() {
-        let somkiatViewController = SomkiatViewController()
-        let ctrl = SortController(controller: somkiatViewController)
-        ctrl.sort("")
-        XCTAssertTrue(somkiatViewController.spyDisplayEmpty)
+        let stubProtocol = SomkiatViewController()
+        let controller = SortController()
+        controller.sortProtocol = stubProtocol
+        controller.sort("")
+        XCTAssertTrue(stubProtocol.spyDisplayEmpty)
     }
 
 }

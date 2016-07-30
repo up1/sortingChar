@@ -13,15 +13,15 @@ protocol SortControllerProtocol {
 }
 
 class SortController: NSObject {
-    var controller: SortControllerProtocol!
+    var sortProtocol: SortControllerProtocol!
 
     func sort(_ input: String) {
         if input.isEmpty {
-            self.controller.displayEmpty()
+            self.sortProtocol.displayEmpty()
         } else {
             let sorter = Sorter()
             let result = sorter.sort(input: input)
-            self.controller.displayResult(result: result)
+            self.sortProtocol.displayResult(result: result)
         }
     }
 }
