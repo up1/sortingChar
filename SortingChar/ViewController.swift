@@ -25,7 +25,6 @@ class ViewController: UIViewController {
     }
 
     @IBAction func sort(_ sender: UIButton) {
-//        let sortController = SortController(controller: self)
         sortController.sort(self.inputField.text!)
     }
 
